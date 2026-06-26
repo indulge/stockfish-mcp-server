@@ -1,0 +1,4 @@
+# Runtime dependencies (see pyproject.toml for the authoritative list / pins).
+# Install with: pip install -r requirements.txt
+chess>=1.11.2
+fastmcp>=3.4.2

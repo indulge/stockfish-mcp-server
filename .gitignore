@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+
+# Stockfish engine binary — too large for git (>100 MB).
+# Fetch it with engine/download-stockfish.sh (see README).
+engine/stockfish
+engine/stockfish.exe

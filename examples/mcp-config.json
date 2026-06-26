@@ -1,0 +1,21 @@
+{
+  "//": "Generic MCP stdio server config. Most clients accept this 'mcpServers' shape",
+  "//1": "(e.g. Claude Desktop's claude_desktop_config.json, or a project .mcp.json).",
+  "//2": "Use absolute paths. Set STOCKFISH_PATH if the binary isn't at engine/stockfish.",
+  "mcpServers": {
+    "stockfish": {
+      "command": "uv",
+      "args": ["run", "python", "/abs/path/to/stockfish-mcp-server/server.py"],
+      "env": {
+        "STOCKFISH_PATH": "/abs/path/to/stockfish-mcp-server/engine/stockfish"
+      }
+    },
+    "stockfish-installed": {
+      "//": "Alternative: after `uv tool install .` (or pip install .)",
+      "command": "stockfish-mcp",
+      "env": {
+        "STOCKFISH_PATH": "/abs/path/to/stockfish-mcp-server/engine/stockfish"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[project]
+name = "chess-stockfish-mcp"
+version = "0.1.0"
+description = "Local stdio MCP server exposing the Stockfish chess engine to Claude"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "chess>=1.11.2",
+    "fastmcp>=3.4.2",
+]
+
+[project.scripts]
+stockfish-mcp = "server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# Flat single-module project: ship server.py as an importable top-level module.
+# The Stockfish binary is NOT bundled (it is large); point STOCKFISH_PATH at it.
+include = ["server.py"]
